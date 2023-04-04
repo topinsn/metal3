@@ -15,25 +15,29 @@
 </head>
 <body>
     <header class="header">
-        <nav class="navbar">
+        <nav class="navbar topnav">
             <div class="logo">
                 <a href="#">
                     <img src="img/metal-logo2.png" alt="logo" width="50px" height="50px" class="logo">
                 </a>
             </div>
             <div class="list-container">
-                <ul id="links" class="list-item">
-                    <li class="item">Blog</li>
-                    <li class="item">Community Resources</li>
+                <ul id="myLinks" class="list-item">
+                    <li class="item"><a href="#">Blog</a></li>
+                    <li class="item"><a href="#">Community Resources</a></li>
+                    <li class="item"><a href="#">Documentation</a></li>
+                    <li class="item"><a href="#">Try It!</a></li>
                 </ul>
+                <a href="#" class="icon">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <a href="#" class="closebtn">
+                    <i class="fa fa-times"></i>
+                </a>
             </div>
-            <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-              </a> -->
         </nav>
 
         <section class="hero">
-            <!-- <img src="/img/kub.jpg" alt="lemurs" class="bg-image"/> -->
             <div class="hero-container">
                 <h1 class="hero-title">Metal<sup>3</sup></h1>
                 <p class="hero-text">Bare metal host provisioning for Kubernetes</p>
@@ -43,9 +47,6 @@
                 </div>
             </div>
 
-            <!-- <div>
-                <img src="/img/host.webp" alt="lemurs" class="bg-image"/>
-            </div> -->
         </section>
         
     </header>
@@ -68,7 +69,10 @@
                     like Kubernetes and manage infrastructure across multiple data centres or regions.
                 </p>
 
-                <button class="btn learn-btn">Learn More</button>
+                <div class="btn-container">
+                    <button class="btn learn-btn">Learn More</button>
+                </div>
+                
             </div>
 
             <div>
@@ -153,7 +157,6 @@
             </div>
         </div>
         <hr>
-        <div>
             <div class="social">
                 <div>
                     <p>Copyright @ 2023 All Rights Reserved</p>
@@ -171,19 +174,37 @@
                     
                 </div>
             </div>
-            
-        </div>
     </footer>
 
     <script>
-        function myFunction() {
-          var bar = document.getElementById("links");
-          if (bar.style.display === "block") {
-            bar.style.display = "none";
-          } else {
-            bar.style.display = "block";
-          }
+        const navToggle = document.querySelector('.icon');
+        const navClose = document.querySelector('.closebtn');
+        const navList = document.querySelector('#myLinks');
+
+        navToggle.addEventListener('click', function() {
+        if (navList.style.display === 'block'){
+            navToggle.style.display = 'block';
+            navList.style.display = 'none';
+            navClose.style.display = 'none';
+        } else {
+            navList.style.display = 'block';
+            navClose.style.display = 'block';
+            navToggle.style.display = 'none';
         }
+        });
+
+        navClose.addEventListener('click', function() {
+        if (navList.style.display === 'block'){
+            navToggle.style.display = 'block';
+            navList.style.display = 'none';
+            navClose.style.display = 'none';
+        } else {
+            navList.style.display = 'block';
+            navClose.style.display = 'block';
+            navToggle.style.display = 'none';
+        }
+        });
+        
     </script>
         
 </body>
